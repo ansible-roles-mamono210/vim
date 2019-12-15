@@ -1,0 +1,16 @@
+- name: Install Vim enhanced with yum
+  yum:
+    name: vim-enhanced
+    state: present
+
+- name: Change vim command to vi
+  lineinfile:
+    dest: /etc/profile
+    line: alias vi='vim'
+    state: present
+
+- name: Set .vimrc in Ansible user directory
+  become: false
+  template:
+    src: .vimrc
+    dest: "/home/{{ ansible_user }}/.vimrc"
