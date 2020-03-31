@@ -1,3 +1,4 @@
+---
 - name: Install Vim enhanced with yum
   yum:
     name: vim-enhanced
@@ -9,8 +10,8 @@
     line: alias vi='vim'
     state: present
 
-- name: Set .vimrc in Ansible user directory
+- name: Create .vimrc
   become: false
   template:
     src: .vimrc
-    dest: "/home/{{ ansible_user }}/.vimrc"
+    dest: "{{ vimrc_dir }}/.vimrc"

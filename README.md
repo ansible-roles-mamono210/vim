@@ -1,14 +1,38 @@
-This playbook installs Vim enhanced on CentOS7.
+[![](https://github.com/ansible-roles-matsumura/vim/workflows/Build/badge.svg)](https://github.com/ansible-roles-matsumura/vim/actions?query=workflow%3ABuild)
+[![](https://github.com/ansible-roles-matsumura/vim/workflows/Lint/badge.svg)](https://github.com/ansible-roles-matsumura/vim/actions?query=workflow%3ALint)
 
-## Install Vim enhanced 
+Role Description
+=========
 
-Change to root and execute commands below.
+Installs vim for CentOS7.
 
+Requirements
+------------
+
+None
+
+Role Variables
+--------------
+
+None
+
+Dependencies
+------------
+
+None
+
+Example Playbook
+----------------
+
+```YAML
+---
+- hosts: all
+  become: true
+  roles:
+    - vim
 ```
-ansible-playbook -i localhost, -c local install.yml
-```
 
-## Customized .vimrc
+License
+-------
 
-'.vimrc' file is placed in 'roles/templates/.vimrc'. Change the file 
-as necessary.
+BSD
