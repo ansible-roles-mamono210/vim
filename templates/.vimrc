@@ -1,3 +1,3 @@
 syntax on
-colorscheme default 
+colorscheme default
 set t_Co=256
