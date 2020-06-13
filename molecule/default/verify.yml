@@ -1,0 +1,23 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Check whether vim is installed
+      command: vim --version
+      register: VIM_VERSION
+      changed_when: false
+      ignore_errors: true
+
+    - name: Check OS version
+      command: cat /etc/redhat-release
+      register: OS_VERSION
+      changed_when: false
+
+    - name: Show vim version
+      debug:
+        var: VIM_VERSION
+
+    - name: Show OS version
+      debug:
+        var: OS_VERSION

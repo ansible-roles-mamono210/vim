@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  become: True
+  vars:
+    ansible_user: ansible
+    vimrc_dir: /home/ansible
+  roles:
+    - role: vim
