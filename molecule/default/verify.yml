@@ -14,7 +14,7 @@
       register: OS_VERSION
       changed_when: false
 
-    - name: Show vim version
+    - name: Make sure vim is installed
       debug:
         var: VIM_VERSION
 
