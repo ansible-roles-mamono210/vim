@@ -1,0 +1,7 @@
+---
+roles:
+  - name: vim
+    src: https://github.com/ansible-roles-matsumura/vim.git
+
+collections:
+  - name: community.general
