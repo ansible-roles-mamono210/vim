@@ -14,11 +14,18 @@ Role Variables
 --------------
 
 ```YAML
-# Directory .vimrc would be created
+# Directory where the .vimrc file would be created
 vimrc_dir: /root
-```
 
-None
+# Name of the group of the .vimrc file
+vimrc_group: root
+
+# The permissions the .vimrc file
+vimrc_mode: '0644'
+
+# Name of the user of the .vimrc file
+vimrc_owner: root
+```
 
 Dependencies
 ------------

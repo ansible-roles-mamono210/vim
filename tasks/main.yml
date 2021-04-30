@@ -18,9 +18,11 @@
     state: present
   when: VIM_INSTALLED is failed
 
-- name: Create .vimrc
-  become: false
+- name: "Create the .vimrc file under {{ vimrc_dir }}"
   ansible.builtin.template:
     src: .vimrc
     dest: "{{ vimrc_dir }}/.vimrc"
+    group: "{{ vimrc_group }}"
+    owner: "{{ vimrc_owner }}"
+    mode: "{{ vimrc_mode }}"
   when: VIM_INSTALLED is failed

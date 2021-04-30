@@ -27,6 +27,9 @@ jobs:
           - centos8
         python-version:
           - 3.9
+        scenario-name:
+          - default
+          - user_test
 
     steps:
       - uses: actions/checkout@v2
@@ -49,7 +52,7 @@ jobs:
           PY_COLORS: '1'
           TZ: 'Asia/Tokyo'
         run: |
-          molecule test
+          molecule test --scenario-name ${{ matrix.scenario-name }}
 
       - name: Show Ansible version
         run: |
