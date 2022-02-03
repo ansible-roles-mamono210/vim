@@ -11,10 +11,10 @@ jobs:
     with:
       molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos7:latest
 
-  molecule-centos8:
+  molecule-centos-stream8:
     uses: github-actions-reusable-workflows/molecule-docker/.github/workflows/workflows.yml@main
     with:
-      molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos8:latest
+      molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos-stream8:latest
 
   molecule-centos7-user-test:
     uses: github-actions-reusable-workflows/molecule-docker/.github/workflows/workflows.yml@main
@@ -22,10 +22,10 @@ jobs:
       molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos7:latest
       molecule-scenario: user_test
 
-  molecule-centos8-user-test:
+  molecule-centos-stream8-user-test:
     uses: github-actions-reusable-workflows/molecule-docker/.github/workflows/workflows.yml@main
     with:
-      molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos8:latest
+      molecule-image: ghcr.io/docker-hub-tm/ansible-test/centos-stream8:latest
       molecule-scenario: user_test
 
   trailing-whitespace:

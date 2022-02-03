@@ -3,7 +3,7 @@
 Role Description
 =========
 
-Installs vim for CentOS7/CentOS8.
+Installs vim for CentOS7/Stream8.
 
 Requirements
 ------------
