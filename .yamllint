@@ -31,6 +31,7 @@ rules:
     level: error
     ignore: |
       molecule/user_test/verify.yml
+      .circleci/config.yml
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable
