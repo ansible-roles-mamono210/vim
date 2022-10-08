@@ -5,19 +5,19 @@
   tasks:
     - name: Check whether vim is installed
       ansible.builtin.command: vim --version
-      register: VIM_VERSION
+      register: vim_version
       changed_when: false
       ignore_errors: true
 
     - name: Check OS version
       ansible.builtin.command: cat /etc/redhat-release
-      register: OS_VERSION
+      register: os_version
       changed_when: false
 
     - name: Make sure vim is installed
       ansible.builtin.debug:
-        var: VIM_VERSION
+        var: vim_version
 
     - name: Show OS version
       ansible.builtin.debug:
-        var: OS_VERSION
+        var: os_version

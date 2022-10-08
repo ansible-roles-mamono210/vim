@@ -1,7 +1,7 @@
 ---
 - name: Check whether vim is installed
   ansible.builtin.command: vim --version
-  register: VIM_INSTALLED
+  register: vim_installed
   changed_when: false
   ignore_errors: true
 
@@ -9,14 +9,14 @@
   ansible.builtin.package:
     name: vim-enhanced
     state: present
-  when: VIM_INSTALLED is failed
+  when: vim_installed is failed
 
 - name: Change vim command to vi
   ansible.builtin.lineinfile:
     dest: /etc/profile
     line: alias vi='vim'
     state: present
-  when: VIM_INSTALLED is failed
+  when: vim_installed is failed
 
 - name: "Create the .vimrc file under {{ vimrc_dir }}"
   ansible.builtin.template:
@@ -25,4 +25,4 @@
     group: "{{ vimrc_group }}"
     owner: "{{ vimrc_owner }}"
     mode: "{{ vimrc_mode }}"
-  when: VIM_INSTALLED is failed
+  when: vim_installed is failed
