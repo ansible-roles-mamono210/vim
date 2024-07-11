@@ -5,15 +5,15 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: ghcr.io/docker-images-mamono210/ansible-test/${MOLECULE_DISTRO:-centos7}:latest
-    pre_build_image: True
+    image: ${MOLECULE_IMAGE}
 provisioner:
   name: ansible
   config_options:
     defaults:
       callbacks_enabled: ansible.posix.profile_tasks
   connection_options:
-    linux_user: vimtest
+    users:
+      - name: vimtest
     vimrc_dir: /home/vimtest/
     vimrc_group: vimtest
     vimrc_owner: vimtest

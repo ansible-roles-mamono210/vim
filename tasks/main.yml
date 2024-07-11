@@ -5,7 +5,7 @@
   changed_when: false
   ignore_errors: true
 
-- name: Install Vim enhanced with yum
+- name: Install Vim enhanced
   ansible.builtin.package:
     name: vim-enhanced
     state: present
