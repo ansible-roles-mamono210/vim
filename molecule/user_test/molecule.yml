@@ -6,6 +6,8 @@ driver:
 platforms:
   - name: instance
     image: ${MOLECULE_IMAGE}
+    pre_build_image: true
+    privileged: true
 provisioner:
   name: ansible
   config_options:
